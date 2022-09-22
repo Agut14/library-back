@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,12 +12,11 @@ class LibraryController extends AbstractController
 {
 
     #[Route('library/list', name: 'library_list')]
-    public function list(Request $request): JsonResponse
+    public function list(Request $request, LoggerInterface $logger): JsonResponse
     {
 
-
-
-        $title = $request->query->get('title');
+        $title = $request->query->get('title', 'Up');
+        $logger->info('List action called up');
         $response = new JsonResponse();
         $response->setData([
             'success' => true,
