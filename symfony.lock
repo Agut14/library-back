@@ -47,6 +47,9 @@
             "config/packages/fos_rest.yaml"
         ]
     },
+    "handcraftedinthealps/rest-routing-bundle": {
+        "version": "1.0.6"
+    },
     "sensio/framework-extra-bundle": {
         "version": "6.2",
         "recipe": {

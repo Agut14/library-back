@@ -1,4 +1,4 @@
-APP\Entity\Book:
+App\Entity\Book:
   attributes:
     id:
       groups: ['book']
